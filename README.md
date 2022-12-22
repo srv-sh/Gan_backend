@@ -5,4 +5,6 @@ conda activate gan
 
 ```bash
 pip install -r requirements.txt
+pip install -r dev-requirements.txt
 ```
+
