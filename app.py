@@ -33,7 +33,7 @@ async def get_img(img: UploadFile = File(...)):
     
 
 @app.post("/generate")
-async def generate_img(prompt: str):
+def generate_img(prompt: str):
     res= send_request(prompt)
     print(f"app = {res}")
     return 

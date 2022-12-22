@@ -15,17 +15,17 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-async def send_img(files):    
+def send_img(files):    
     url = 'http://localhost:8000/get_generated_img'
     res  = requests.post(url, files=files)
     print(f"tiger{res}")
 
 @app.post("/send_generated_img")
-async def get_img(prompt: str):
+def get_img(prompt: str):
                             ## DO SOMETHING WITH THE PROMPT ##
     print(prompt)
     files = {'img': open('face.jpg', 'rb')}
-    await send_img(files)
+    send_img(files)
 
     return
     
