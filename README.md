@@ -1,19 +1,29 @@
+
+Create new conda environment
 ```bash
-conda create -n gan python=3.10
+conda create -n gan python=3.9.0
 conda activate gan
 ```
 
+Install Dependencies
 ```bash
 pip install -r requirements.txt
 pip install -r dev-requirements.txt
 ```
 
+Run the servers
 ```bash
-uvicorn tiger:app --port 5000 --reload
+python web-server.py  
 ```
 
 
-```bash
-uvicorn app:app --reload
+## Send the request in postman as 
+
+Emit at `prompt`
+```python
+{"user_id" : "rukaiya",
+ "prompt" : "red hat"
+}
 ```
 
+And listen at `generated_img` 
