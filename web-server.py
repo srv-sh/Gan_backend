@@ -28,7 +28,7 @@ app.mount("/", socket_app)
 
 ## RECEIVING FROM USER(FRONT)
 @sio.on("prompt")
-async def admin_uttered(sid,resp):
+async def given_prompt(sid,resp):
     prompt = resp["prompt"]
     user_id = resp["user_id"]
     url = fashion_gen.generate_img(prompt=prompt)
